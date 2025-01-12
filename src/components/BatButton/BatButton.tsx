@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Pressable, Text, View } from "react-native";
 import { styles } from "./style";
 
@@ -7,22 +7,12 @@ interface BatButtonProps {
   onPress: () => void;
 }
 
-export default function BatButton({ text, onPress }: BatButtonProps) {
-
-
+export function BatButton({ text, onPress }: BatButtonProps) {
   return (
-    <View
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-    }}
-  >
-    <Pressable style={styles.button} onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
-    </Pressable>
-    
-  </View>
-  )
+    <View>
+      <Pressable style={styles.button} onPress={onPress}>
+        <Text style={styles.text}>{text}</Text>
+      </Pressable>
+    </View>
+  );
 }

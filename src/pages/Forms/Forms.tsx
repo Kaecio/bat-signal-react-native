@@ -1,44 +1,49 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import BatTextInput from '../../components/BatTextInput/BatTextInput'
+import { View, Text } from "react-native";
+import React from "react";
+import { BatTextInput } from "../../components/BatTextInput/BatTextInput";
+import { BatButton } from "../../components/BatButton/BatButton";
 interface FormProps {
-    label: string;
-    placeholder: string;
-    type: string;
+  label: string;
+  placeholder: string;
+  type: string;
 }
 
-const textForm:FormProps[] = [
-    {
-        label: 'Name',
-        placeholder: 'Enter your name',
-        type: 'text'
-    },
-    {
-        label: 'Email',
-        placeholder: 'Enter your email',
-        type: 'email'
-    },
-    {
-        label: 'Password',
-        placeholder: 'Enter your password',
-        type: 'password'
-    }
-]
+const textForm: FormProps[] = [
+  {
+    label: "Name",
+    placeholder: "Enter your name",
+    type: "text",
+  },
+  {
+    label: "Tepephone",
+    placeholder: "Enter your email",
+    type: "email",
+  },
+  {
+    label: "location",
+    placeholder: "Enter your password",
+    type: "password",
+  },
+  {
+    label: "Obs",
+    placeholder: "Enter your obs",
+    type: "text",
+  },
+];
 
-export default function Forms() {
+export function Forms() {
   return (
     <View>
-        <Text>Forms</Text>
-        {textForm.map((item, index) => {
-            return (
-                <BatTextInput
-                    key={index}
-                    label={item.label}
-                    placeholder={item.placeholder}
-                    type={item.type}
-                />
-            )
-        })}
+      {textForm.map((form, index) => (
+        <BatTextInput
+          key={index}
+          text={form.label}
+          placeholder={form.placeholder}
+        />
+      ))}
+      <View style={{ marginTop: 10 }}>
+        <BatButton text="Submit" onPress={() => console.log("submit")} />
+      </View>
     </View>
-  )
+  );
 }
