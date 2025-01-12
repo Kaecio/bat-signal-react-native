@@ -7,10 +7,9 @@ import { Forms } from "../Forms/Forms";
 import { BatLogo } from "../../components/BatLogo/BatLogo";
 
 export function Home() {
-  const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState(false);
 
   function handleShowForm() {
-    console.log("show form");
     setShowForm(true);
   }
 

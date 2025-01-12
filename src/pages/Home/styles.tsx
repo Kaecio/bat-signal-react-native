@@ -9,6 +9,6 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderColor: colors.black[100],
-    borderWidth: 4,
+    borderWidth: 20,
   },
 });

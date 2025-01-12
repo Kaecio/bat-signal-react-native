@@ -1,5 +1,6 @@
 import { View, TextInput, Text } from "react-native";
 import React from "react";
+import { styles } from "./style";
 
 interface BatTextInputProps {
   text: string;
@@ -9,18 +10,10 @@ interface BatTextInputProps {
 export function BatTextInput({ text, placeholder }: BatTextInputProps) {
   return (
     <View>
-      <Text>{text}</Text>
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: "gray",
-          borderWidth: 1,
-          width: 200,
-          padding: 10,
-          marginTop: 5,
-        }}
-        placeholder={placeholder}
-      />
+      <Text style={styles.text}>{text}</Text>
+      <View style={styles.container}>
+        <TextInput style={styles.inputText} placeholder={placeholder} />
+      </View>
     </View>
   );
 }

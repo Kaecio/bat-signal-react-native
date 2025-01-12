@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { Alert, View } from "react-native";
 import React from "react";
 import { BatTextInput } from "../../components/BatTextInput/BatTextInput";
 import { BatButton } from "../../components/BatButton/BatButton";
@@ -15,14 +15,14 @@ const textForm: FormProps[] = [
     type: "text",
   },
   {
-    label: "Tepephone",
-    placeholder: "Enter your email",
-    type: "email",
+    label: "Telephone",
+    placeholder: "Enter your telephone",
+    type: "number",
   },
   {
     label: "location",
-    placeholder: "Enter your password",
-    type: "password",
+    placeholder: "Enter your location",
+    type: "text",
   },
   {
     label: "Obs",
@@ -30,6 +30,11 @@ const textForm: FormProps[] = [
     type: "text",
   },
 ];
+
+function handleAlert() {
+  console.log("The signal has been activated");
+  Alert.alert("Bat Signal", "The signal has been activated");
+}
 
 export function Forms() {
   return (
@@ -42,7 +47,7 @@ export function Forms() {
         />
       ))}
       <View style={{ marginTop: 10 }}>
-        <BatButton text="Submit" onPress={() => console.log("submit")} />
+        <BatButton text="Submit" onPress={handleAlert} />
       </View>
     </View>
   );
